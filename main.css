@@ -1,0 +1,18 @@
+.menu{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #FFFFFF, #DDDDDD);
+}
+
+.menuitem{
+    margin: 2px;
+    padding: 5px;
+    display: inline-block;
+    border: 1px solid #CCCCCC;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
