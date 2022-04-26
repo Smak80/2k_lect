@@ -1,12 +1,18 @@
 <?php
-require_once "menu.php";
+require_once 'menu.php';
+require_once 'a_content.php';
 
 class page
 {
-    public function __construct(){
+    public function __construct(a_content $content){
         $this->start_page();
-        $this->show_menu();
-
+        print '<div class="wrapper">';
+            $this->show_menu();
+            print '<div class="main_content">';
+                $content->show_content();
+            print '</div>';
+            $this->show_footer();
+        print '</div>';
         $this->finish_page();
     }
 
@@ -47,8 +53,10 @@ class page
     }
 
     public function show_footer(){
-
+        ?>
+        <div class="footer">
+            © Маклецов С. В., 2022
+        </div>
+        <?php
     }
 }
-
-new page();

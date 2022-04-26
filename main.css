@@ -1,8 +1,33 @@
-.menu{
-    width: 100%;
+body{
     margin: 0;
     padding: 0;
+}
+
+.main_content{
+    width: 1024px;
+    margin: 0 auto;
+    padding: 2px;
+    background: linear-gradient(180deg, #DDFFDD, #FFFFFF, #DDFFDD);
+}
+
+.menu{
+    width: calc(100% - 10px);
+    margin: 0;
+    padding: 5px;
     background: linear-gradient(180deg, #FFFFFF, #DDDDDD);
+    height: 34px;
+}
+
+.footer{
+    margin: 0;
+    height: calc(50px - 20px);
+    width: calc(100% - 20px);
+    padding: 10px;
+    background: linear-gradient(0deg, #FFFFFF, #DDDDDD);
+}
+
+.wrapper{
+    margin-bottom: 0;
 }
 
 .menuitem{
