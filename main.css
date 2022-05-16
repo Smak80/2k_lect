@@ -4,7 +4,7 @@ body{
 }
 
 .main_content{
-    width: 1024px;
+    width: calc(1024px - 4px);
     margin: 0 auto;
     padding: 2px;
     background: linear-gradient(180deg, #DDFFDD, #FFFFFF, #DDFFDD);
@@ -24,6 +24,16 @@ body{
     width: calc(100% - 20px);
     padding: 10px;
     background: linear-gradient(0deg, #FFFFFF, #DDDDDD);
+}
+
+.header{
+    width: calc(1024px - 40px);
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(90deg, #FFFFDD, #FFFFFF, #FFFFDD);
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
 }
 
 .wrapper{

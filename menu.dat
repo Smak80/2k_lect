@@ -1,3 +1,6 @@
 index.php Основная страница
 second.php Вторая страница
 third.php Третья страница
+login.php Вход на сайт
+register.php Регистрация
+login.php?exit=1 Выход

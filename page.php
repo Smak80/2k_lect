@@ -4,10 +4,16 @@ require_once 'a_content.php';
 
 class page
 {
+    private a_content $content;
     public function __construct(a_content $content){
+        $this->content = $content;
+        if ($this->content->is_protected() && !isset($_SESSION['auth'])){
+            header("Location: login.php");
+        }
         $this->start_page();
         print '<div class="wrapper">';
             $this->show_menu();
+            $this->show_header();
             print '<div class="main_content">';
                 $content->show_content();
             print '</div>';
@@ -45,11 +51,9 @@ class page
     }
 
     public function show_header(){
-
-    }
-
-    public function show_content(){
-
+        print '<div class="header">';
+        print $this->content->get_title();
+        print '</div>';
     }
 
     public function show_footer(){
