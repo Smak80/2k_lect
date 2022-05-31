@@ -1,6 +1,7 @@
 <?php
 require_once 'a_content.php';
 require_once 'page.php';
+require_once 'DBHelper.php';
 
 class register extends a_content
 {
@@ -43,14 +44,23 @@ class register extends a_content
             $this->reg_ok = false;
             return;
         }
-        $f = fopen($this->users_filename, "a");
+
+
+
+        /*$f = fopen($this->users_filename, "a");
         $hpsw = password_hash($psw, PASSWORD_DEFAULT);
         fwrite($f, "$login|$hpsw|$email\r\n");
-        fclose($f);
+        fclose($f);*/
+
+        $dbh = DBHelper::getInstance("root","");
+        //$dbh->add_user();
+
     }
 
     private function is_login_exists($login) : bool{
-        $us = file_get_contents($this->users_filename);
+        $dbh = DBHelper::getInstance("root", "");
+        $dbh->is_user_exists($login);
+        /*$us = file_get_contents($this->users_filename);
         if ($us !== false){
             $usrs = mb_split("\r\n", $us);
             foreach ($usrs as $user){
@@ -59,7 +69,7 @@ class register extends a_content
                     return true;
                 }
             }
-        }
+        }*/
         return false;
     }
 

@@ -1,6 +1,7 @@
 <?php
 require_once 'a_content.php';
 require_once 'page.php';
+require_once 'DBHelper.php';
 
 class login extends a_content
 {
@@ -37,7 +38,8 @@ class login extends a_content
     }
 
     private function is_authorized($login, $psw) : bool{
-        $us = file_get_contents($this->users_filename);
+        return DBHelper::getInstance("root","")->is_authorized($login, $psw);
+        /*$us = file_get_contents($this->users_filename);
         if ($us !== false){
             $usrs = mb_split("\r\n", $us);
             foreach ($usrs as $user){
@@ -49,7 +51,7 @@ class login extends a_content
                 }
             }
         }
-        return false;
+        return false;*/
     }
 
     public function show_content()

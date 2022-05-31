@@ -1,6 +1,7 @@
 <?php
 require_once 'a_content.php';
 require_once 'page.php';
+require_once 'DBHelper.php';
 
 class second extends a_content
 {
@@ -10,13 +11,10 @@ class second extends a_content
     }
 
     public function show_content(){
-        print "Привет, {$_SESSION['email']}";
         ?>
         Это контент второй страницы сайта.
         <?php
-        for ($i = 0; $i < 45; $i++){
-            print '<div>текст</div>';
-        }
+        DBHelper::getInstance("root", "")->test();
     }
 }
 
